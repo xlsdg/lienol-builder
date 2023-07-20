@@ -15,11 +15,11 @@
 
 mkdir -p files/etc/openclash/core
 
-CLASH_TUN_URL=$(curl -fsSL https://api.github.com/repos/vernesong/OpenClash/contents/master/premium?ref=core | grep download_url | grep /clash-linux-amd64-2 | awk -F '"' '{print $4}')
-CLASH_TUN_V3_URL=$(curl -fsSL https://api.github.com/repos/vernesong/OpenClash/contents/master/premium?ref=core | grep download_url | grep /clash-linux-amd64-v3-2 | awk -F '"' '{print $4}')
+# CLASH_TUN_URL=$(curl -fsSL https://api.github.com/repos/vernesong/OpenClash/contents/master/premium?ref=core | grep download_url | grep /clash-linux-amd64-2 | awk -F '"' '{print $4}')
+# CLASH_TUN_V3_URL=$(curl -fsSL https://api.github.com/repos/vernesong/OpenClash/contents/master/premium?ref=core | grep download_url | grep /clash-linux-amd64-v3-2 | awk -F '"' '{print $4}')
 
-# CLASH_TUN_URL=$(curl -fsSL https://api.github.com/repos/Dreamacro/clash/releases/tags/premium | grep /clash-linux-amd64-2 | awk -F '"' '{print $4}')
-# CLASH_TUN_V3_URL=$(curl -fsSL https://api.github.com/repos/Dreamacro/clash/releases/tags/premium | grep /clash-linux-amd64-v3-2 | awk -F '"' '{print $4}')
+CLASH_TUN_URL=$(curl -fsSL https://api.github.com/repos/Dreamacro/clash/releases/tags/premium | grep /clash-linux-amd64-2 | awk -F '"' '{print $4}')
+CLASH_TUN_V3_URL=$(curl -fsSL https://api.github.com/repos/Dreamacro/clash/releases/tags/premium | grep /clash-linux-amd64-v3-2 | awk -F '"' '{print $4}')
 
 wget -qO- $CLASH_TUN_URL | gunzip -c > files/etc/openclash/core/clash_tun
 wget -qO- $CLASH_TUN_URL | gunzip -c > files/etc/openclash/core/clash_tun_v3
